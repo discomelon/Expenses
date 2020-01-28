@@ -1,19 +1,35 @@
 from django import forms
 from .models import *
 
-class LaptopForm(forms.ModelForm):
+class NadiaForm(forms.ModelForm):
     class Meta:
-        model = Laptops
-        fields = ('Title', 'Value', 'Category','Image', 'Description',)
+        model = Nadia
+        fields = ('Title', 'Value', 'Category','Image', 'Description', 'Date')
 
 
-class DesktopForm(forms.ModelForm):
+class FarhanForm(forms.ModelForm):
     class Meta:
-        model = Desktops
-        fields = ('Title', 'Value', 'Category', 'Image', 'Description',)
+        model = Farhan
+        fields = ('Title', 'Value', 'Category', 'Image', 'Description','Date')
         
 
-class MobileForm(forms.ModelForm):
+class FarhanFamilySuperFundForm(forms.ModelForm):
     class Meta:
-        model = Mobiles
-        fields = ('Title', 'Value', 'Category', 'Image', 'Description',)
+        model = FarhanFamilySuperFund
+        fields = ('Title', 'Value', 'Category', 'Image', 'Description','Date')
+
+class OngieForm(forms.ModelForm):
+    class Meta:
+        model = Ongie
+        fields = ('Title', 'Value', 'Category', 'Image', 'Description','Date')
+
+class OrangeTrust(forms.ModelForm):
+    class Meta:
+        model = OrangeTrust
+        fields = ('Title', 'Value', 'Category', 'Image', 'Description','Date')
+
+
+
+
+
+

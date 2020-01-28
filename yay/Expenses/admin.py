@@ -3,6 +3,6 @@ from import_export.admin import ImportExportModelAdmin
 from .models import *
 # Register your models here.
 
-@admin.register(Desktops, Laptops, Mobiles)
+@admin.register(Farhan, Nadia, FarhanFamilySuperFund, Ongie, OrangeTrust)
 class ViewAdmin(ImportExportModelAdmin):
-    pass
+    exclude = ('id', )

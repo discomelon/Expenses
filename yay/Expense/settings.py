@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Expenses',
     'import_export',
+    'datetime',
 ]
 
 MIDDLEWARE = [

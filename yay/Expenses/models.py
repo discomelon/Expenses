@@ -1,12 +1,14 @@
 from django.db import models
-
+from datetime import date
 # Create your models here.
 
-class Device(models.Model):
+class Entity(models.Model):
 
     Title = models.CharField(max_length=255, blank=False, default='')
     Value = models.CharField(max_length=255, default='')
     Image = models.FileField(blank=True)
+    Date = models.DateField(auto_now_add=False, auto_now=False, blank = True)
+    Time = models.DateField(auto_now_add=True, auto_now=False, blank = True)
 
     EXCEL_CHOICES = ( 
      ('Work', 'Work'),
@@ -37,17 +39,25 @@ class Device(models.Model):
     Category = models.CharField(max_length=255, choices=EXCEL_CHOICES, default='None')
     Description = models.CharField(max_length=255, default="No Issues")
 
+
     class Meta:
         abstract = True
 
     def __str__(self):
         return 'Title: {0} Value: {1}'.format(self.Title, self.Value)
 
-class Desktops(Device):
+class Farhan(Entity):
     pass
 
-class Laptops(Device):
+class Nadia(Entity):
     pass
 
-class Mobiles(Device):
+class FarhanFamilySuperFund(Entity):
     pass
+
+class Ongie(Entity):
+    pass
+
+class OrangeTrust(Entity):
+    pass
+

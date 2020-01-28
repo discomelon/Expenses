@@ -5,22 +5,21 @@
   <div class="add_buttons">
 
     <div class="button-group">
-      <a href="{% url 'display_laptops' %}" class="btn btn-primary btn-md btn-trim" role="button"> Farhan</a>
-      <a href="{% url 'add_laptop' %}" class="btn btn-warning btn-sm btn-pad" role="button"> +</a>
+      <a href="{% url 'display_Farhan' %}" class="btn btn-primary btn-md btn-trim" role="button"> Farhan</a>
+      <a href="{% url 'add_Farhan' %}" class="btn btn-warning btn-sm btn-pad" role="button"> +</a>
 
-      <a href="{% url 'display_desktops' %}" class="btn btn-primary btn-md btn-trim" role="button"> Farhan Family Super Fund</a>
-      <a href="{% url 'add_desktop' %}" class="btn btn-warning btn-sm btn-pad" role="button"> +</a>
+      <a href="{% url 'display_Nadia' %}" class="btn btn-primary btn-md btn-trim" role="button"> Nadia</a>
+      <a href="{% url 'add_Nadia' %}" class="btn btn-warning btn-sm btn-pad" role="button"> +</a>
 
-      <a href="{% url 'display_mobiles' %}" class="btn btn-primary btn-md btn-trim" role="button"> Nadia</a>
-      <a href="{% url 'add_mobile' %}" class="btn btn-warning btn-sm btn-pad" role="button"> +</a>
+      <a href="{% url 'display_FarhanFamilySuperFund' %}" class="btn btn-primary btn-md btn-trim" role="button"> Farhan Family Super Fund</a>
+      <a href="{% url 'add_FarhanFamilySuperFund' %}" class="btn btn-warning btn-sm btn-pad" role="button"> +</a>
 
-{% comment %}
-      <a href="{% '#' %}" class="btn btn-primary btn-md btn-trim" role="button"> Ongie</a> 
-      <a href="{% '#' %}" class="btn btn-warning btn-sm btn-pad" role="button"> +</a> 
+      <a href="{% url 'display_Ongie' %}" class="btn btn-primary btn-md btn-trim" role="button"> Ongie</a>
+      <a href="{% url 'add_Ongie' %}" class="btn btn-warning btn-sm btn-pad" role="button"> +</a>
 
-      <a href="{% '#' %}" class="btn btn-primary btn-md btn-trim" role="button"> Orange Trust</a> 
-      <a href="{% '#' %}" class="btn btn-warning btn-sm btn-pad" role="button"> +</a> 
-{% endcomment %}
+      <a href="{% url 'display_OrangeTrust' %}" class="btn btn-primary btn-md btn-trim" role="button"> OrangeTrust</a>
+      <a href="{% url 'add_OrangeTrust' %}" class="btn btn-warning btn-sm btn-pad" role="button"> +</a>
+
     </div>
 
   </div>
@@ -37,8 +36,9 @@
         <th>Title</th>
         <th>Value</th>
         <th>Category</th>
-        <th>Description</th>
         <th>Image</th>
+        <th>Date</th>
+        <th></th>
       </tr>
     </thead>
 
@@ -48,26 +48,37 @@
 
       <tr>
         <td>{{ item.pk }}
-        <td>{{ item.Title }}</td>
+        <td>{{ itemTitle }}</td>
         <td>{{ item.Value }} $</td>
         <td>{{ item.Category }}</td>
-        <td>{{ item.Description }}</td>
         <td>{{ item.Image }}</td>
+        <td>{{ item.Date }}</td>
 
-        {% if header|lower == "laptops" %}
+        {% if header|lower == "Farhan" %}
         <td>
-            <a href="{% url 'edit_laptop' item.pk %}" class="btn btn-warning btn-sm" role="button" aria-pressed="true" > Edit</a>
-            <a href="{% url 'delete_laptop' item.pk%}" class="btn btn-danger btn-sm" role="button" aria-pressed="true" > x</a>
+            <a href="{% url 'edit_Farhan' item.pk %}" class="btn btn-warning btn-sm" role="button" aria-pressed="true" > Edit</a>
+            <a href="{% url 'delete_Farhan' item.pk%}" class="btn btn-danger btn-sm" role="button" aria-pressed="true" > x</a>
         </td>
-        {% elif header|lower == "desktops" %}
+        {% elif header|lower == "Nadia" %}
         <td>
-            <a href="{% url 'edit_desktop' item.pk %}" class="btn btn-warning btn-sm" role="button" aria-pressed="true" > Edit</a>
-            <a href="{% url 'delete_desktop' item.pk%}" class="btn btn-danger btn-sm" role="button" aria-pressed="true" > x</a>
+            <a href="{% url 'edit_Nadia' item.pk %}" class="btn btn-warning btn-sm" role="button" aria-pressed="true" > Edit</a>
+            <a href="{% url 'delete_Nadia' item.pk%}" class="btn btn-danger btn-sm" role="button" aria-pressed="true" > x</a>
+        </td>
+        {% elif header|lower == "Farhan Family Super Fund" %}
+        <td>
+            <a href="{% url 'edit_FarhanFamilySuperFund' item.pk %}" class="btn btn-warning btn-sm" role="button" aria-pressed="true" > Edit</a>
+            <a href="{% url 'delete_FarhanFamilySuperFund' item.pk%}" class="btn btn-danger btn-sm" role="button" aria-pressed="true" > x</a>
+        </td>
+
+        {% elif header|lower == "OrangeTrust" %}
+        <td>
+            <a href="{% url 'edit_OrangeTrust' item.pk %}" class="btn btn-warning btn-sm" role="button" aria-pressed="true" > Edit</a>
+            <a href="{% url 'delete_OrangeTrust' item.pk%}" class="btn btn-danger btn-sm" role="button" aria-pressed="true" > x</a>
         </td>
         {% else %}
         <td>
-            <a href="{% url 'edit_mobile' item.pk %}" class="btn btn-warning btn-sm" role="button" aria-pressed="true" > Edit</a>
-            <a href="{% url 'delete_mobile' item.pk%}" class="btn btn-danger btn-sm" role="button" aria-pressed="true" > x</a>
+            <a href="{% url 'edit_Ongie' item.pk %}" class="btn btn-warning btn-sm" role="button" aria-pressed="true" > Edit</a>
+            <a href="{% url 'delete_Ongie' item.pk%}" class="btn btn-danger btn-sm" role="button" aria-pressed="true" > x</a>
         </td>
         {% endif %}
 
